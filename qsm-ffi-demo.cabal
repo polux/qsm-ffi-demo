@@ -1,0 +1,22 @@
+-- Copyright 2019 Google LLC
+--
+-- Use of this source code is governed by a BSD-style
+-- license that can be found in the LICENSE file or at
+-- https://developers.google.com/open-source/licenses/bsd
+
+name:                qsm-ffi-demo
+version:             0.1.0.0
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable qsm-ffi-demo
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5,
+                       tree-diff,
+                       QuickCheck,
+                       quickcheck-state-machine
+  C-sources: src/buffer.c
+  Include-dirs: src
+  Includes: src/buffer.h
